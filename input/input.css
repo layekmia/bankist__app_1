@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2{
+    color: #333333;
+}
+
+@layer components{
+    .input-feild{
+        @apply w-[120px] bg-white text-center py-2 px-5 rounded-[100px] outline-none border border-transparent focus:border-gray-400
+    }
+}

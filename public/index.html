@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../output/tailwind.css">
+    <title>Bankis App</title>
+</head> 
+<body class="font-poppins p-5 bg-bodyColor">
+    <!-- * Header section -->
+    <header class="flex items-center justify-between px-5">
+        <!-- welcome msg -->
+        <div>
+            <p id="welcome-msg" class="text-xl text-primaryTextClr">Login in to get started</p>
+        </div>
+        <!-- logo -->
+        <div>
+            <img src="../assets/logo.png" alt="" class="w-[52px] h-[52px]">
+        </div>
+        <!-- login form --> 
+         <form action="#" class="space-x-1">
+            <input id="login-username" type="text" placeholder="user" class="input-feild">
+            <input id="login-pin" type="password" placeholder="PIN"  class="input-feild">
+            <button id="login-btn" class="text-xl font-bold py-[9px] ">&rarr;</button>
+         </form>
+    </header>
+    <!-- * Main section -->
+    <main id="app" class="hidden  max-w-[1000px] mx-auto mt-10 grid-cols-[4fr_3fr] grid-rows-[auto_repeat(3,150px)_auto] gap-5 ">
+        <!-- * currenc balance -->
+        <div class="flex items-center justify-between mb-5 col-span-2">
+            <div>
+                <h2 class="text-xl font-medium text-primaryTextClr">Current balance</h2>
+                <p class="text-sm text-[#888888]">As of <span id="date">12/02/2025</span></p>
+            </div>
+
+            <div>
+                <p id="Current-balance" class="text-5xl text-primaryTextClr">0000€</p>
+            </div>
+        </div>
+
+        <!-- * movements -->
+        <div id="movements" class="bg-white overflow-scroll rounded-tl-xl row-span-3">
+            <!-- * movments rows -->
+            <div class="flex py-5 px-10 items-center border-b-2 ">
+                <p class="text-xs py-[5px] px-2 bg-greenBg text-white rounded-lg mr-5">2 DEPOSIT</p>
+                <P class="text-xs text-[#666666]">3 DAYS AGO</P>
+                <p class="ml-auto text-base text-primaryTextClr">4000€</p>
+            </div>
+            <div class="flex py-5 px-10 items-center border-b">
+                <p class="text-xs py-[5px] px-2 bg-redBg text-white rounded-lg mr-5">1 WITHDRAWAL</p>
+                <P class="text-xs text-[#666666]">3 DAYS AGO</P>
+                <p class="ml-auto text-base text-primaryTextClr">4000€</p>
+            </div>
+        </div>
+
+        <!-- * Transfer operation -->
+         <div class="py-8 px-10 bg-gradient-to-tl from-[#ffb003] to-[#ffcb03] rounded-lg">
+            <h2 class="text-base mb-4 font-bold">Transfer money</h2>
+            <form action="#" class="grid grid-cols-[2.5fr_2.4fr_1fr] gap-[4px_10px] text-center">
+                <input id="transfer-to" type="text" class="py-[2px] px-2.5 rounded-md w-full border-none outline-none text-center bg-[rgba(255,255,255,0.4)]  ">
+                <input id="transfer-amount" type="text" class="py-[2px] px-2.5 rounded-md w-full border-none outline-none  text-center bg-[rgba(255,255,255,0.4)]  ">
+                <button id="transfer-btn" class="bg-[#f0f0f0] text-base rounded-lg">&rarr;</button>
+                <p class="text-xs">Transfer to</p>
+                <p class="text-xs">Amount</p>
+            </form>
+         </div>
+        <!-- * Loan operation -->
+         <div class="py-8 px-10 bg-gradient-to-tl from-[#39b385] to-[#9be15d] rounded-lg">
+            <h2 class="text-base mb-4 font-bold">Loan</h2>
+            <form action="#" class="grid grid-cols-[2fr_1fr_2fr] gap-[4px_10px] grid-rows-[auto_auto] text-center">
+                <input id="loan-amount" type="text" class="py-[2px] px-2.5 rounded-md w-full border-none outline-none text-center bg-[rgba(255,255,255,0.4)]  ">
+                <button id="loan-btn" class="bg-[#f0f0f0] text-base rounded-lg">&rarr;</button>
+                <p class="text-xs row-start-2">Amount</p>
+            </form>
+         </div>
+        <!-- * account close operation -->
+        <div class="py-8 px-10 bg-gradient-to-tl from-[#e52a5a] to-[#ff585f] rounded-lg">
+            <h2 class="text-base mb-4 font-bold">Close account</h2>
+            <form action="#" class="grid grid-cols-[2.5fr_2.4fr_1fr] gap-[4px_10px] text-center">
+                <input id="input-close-username" type="text" class="py-[2px] px-2.5 rounded-md w-full border-none outline-none text-center bg-[rgba(255,255,255,0.4)]  ">
+                <input id="input-close-pin" type="password" class="py-[2px] px-2.5 rounded-md w-full border-none outline-none  text-center bg-[rgba(255,255,255,0.4)]  ">
+                <button id="close-btn" class="bg-[#f0f0f0] text-base rounded-lg">&rarr;</button>
+                <p class="text-xs">Confirm user</p>
+                <p class="text-xs">Confirm PIN</p>
+            </form>
+         </div>
+
+         <!-- * summary section -->
+          <div class="flex items-center mt-2.5 py-1">
+             <p class="text-xs text-primaryTextClr mr-2">IN</p>
+             <p id="summary-in" class="text-xl font-medium text-greenBg mr-6">0000€</p>
+             <p class="text-xs text-primaryTextClr mr-2">OUT</p>
+             <p id="summary-out" class="text-xl font-medium text-redBg mr-6">0000€</p>
+             <p class="text-xs text-primaryTextClr mr-2">INTEREST</p>
+             <p id="summary-inrest" class="text-xl font-medium text-greenBg mr-6">0000€</p>
+             <button id="sort-btn" class="ml-auto text-xs">↓ SORT</button>
+          </div>
+
+          <!--* Logged in time out -->
+          <div class="flex items-end">
+            <p class="ml-auto text-xs">You will logged out in <span id="logout-timer">05:00</span></p>
+          </div>
+    </main>
+
+    <script src="./js/array.js"></script>
+</body>
+</html>
